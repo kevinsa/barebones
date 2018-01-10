@@ -8,7 +8,9 @@ class App extends Component {
   render() {
       return (
         <React.Fragment>
-          <TopNav authenticated={this.props.authenticated} authenticatedUser={this.props.authenticatedUser} />
+          <TopNav authenticated={this.props.authenticated}
+            authenticatedUser={this.props.authenticatedUser}
+            history={this.props.history} />
           <Main />
         </React.Fragment>
     );
