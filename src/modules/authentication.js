@@ -4,13 +4,15 @@ import Storage from '../services/storage'
 
 export const LOGIN_REQUESTED = 'authentication/LOGIN_REQUETED'
 export const LOGIN_COMPLETED = 'authentication/LOGIN_COMPLETED'
+export const LOGIN_FAILED = 'authentication/LOGIN_FAILED'
 export const LOGIN_HYDRATE = 'authentication/LOGIN_HYDRATE'
 export const LOGOUT_COMPLETED = 'authentication/LOGOUT_COMPLETED'
 
 const initialState = {
     authenticated: false,
     isAuthenticating: false,
-    authenticatedUser: {}
+    authenticatedUser: {},
+    authenticationError: ''
 }
 
 
@@ -37,10 +39,18 @@ export default (state = initialState, action) => {
                 isAuthenticating: false,
                 authenticatedUser: action.payload
             }
+        
+        case LOGIN_FAILED: 
+            return {
+                ...initialState,
+                authenticationError: action.payload
+            }
 
         case LOGOUT_COMPLETED:
-            return initialState
-            
+            return {
+                ...initialState
+            }
+
         default:
             return state
     }
@@ -68,6 +78,12 @@ export const login = (user) => {
 
             //redirect
             dispatch(push('/'))
+        }, (error) => {
+            
+            dispatch({
+                type: LOGIN_FAILED,
+                payload: error.message
+            })
         })
     }
 }

@@ -29,7 +29,7 @@ class LoginForm extends React.Component {
                 usernameValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
                 break;
             case 'password':
-                passwordValid = value.length >= 6;
+                passwordValid = value.length >= 5;
                 break;
             default:
                 break;
@@ -51,9 +51,12 @@ class LoginForm extends React.Component {
 
     render() {
         const loadingContent = <i className="fa fa-spinner fa-spin"></i>
+        const errorMessage = <div className="error center-text">{this.props.authenticationError}</div>
 
         return(
             <div className="login-box">
+                { this.props.authenticationError ? errorMessage : '' }
+
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <input className="form-control" 

@@ -39,7 +39,9 @@ class Login extends React.Component {
                         </p>
                     </div>
                     <div className="col-md-6">
-                        <LoginForm authenticating={this.props.isAuthenticating} onSubmit={this.handleLogin} />
+                        <LoginForm authenticating={this.props.isAuthenticating}
+                            onSubmit={this.handleLogin} 
+                            authenticationError={this.props.authenticationError} />
                     </div>
                 </div>
             </div>
@@ -54,7 +56,8 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 
 const mapStateToProps = state => ({
     authenticated: state.authentication.authenticated,
-    isAuthenticating: state.authentication.isAuthenticating
+    isAuthenticating: state.authentication.isAuthenticating,
+    authenticationError: state.authentication.authenticationError
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)
