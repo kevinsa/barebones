@@ -1,0 +1,17 @@
+.login-page {
+    max-width: 800px;
+    padding: 100px 20px 20px 20px;
+    margin: 0 auto;
+}
+
+.login-box {
+    background-color: #ffffff;
+    color: inherit;
+    padding: 15px 20px 20px 20px;
+    border: 1px solid #e7eaec;
+}
+
+.login-box a {
+    font-size: 10px;
+    margin-top: 15px;
+}
