@@ -31,7 +31,9 @@ class Login extends React.Component {
                     <div className="col-md-6">
                         <h3>barebones</h3>
                         <p>
-                            A barebones login page. Use the following credentials:
+                            A barebones react starter app with authentication, user 
+                            registration and user profile simulation.  Just wire in your
+                            back end API callouts.
                         </p>
                         <p>
                             username: bare@bones.com<br />
