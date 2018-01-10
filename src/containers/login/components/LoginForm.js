@@ -50,9 +50,10 @@ class LoginForm extends React.Component {
     }
 
     render() {
+        const loadingContent = <i className="fa fa-spinner fa-spin"></i>
+
         return(
             <div className="login-box">
-                { this.props.authenticating ? <div>loading....</div> : '' }
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <input className="form-control" 
@@ -74,7 +75,9 @@ class LoginForm extends React.Component {
                     </div>
                     <button type="submit"
                             disabled={!this.state.formValid}
-                            className="btn btn-block btn-primary">Login</button>
+                            className="btn btn-block btn-primary">Login&nbsp;&nbsp; 
+                            { this.props.authenticating ? loadingContent : '' }
+                            </button>
                     <a href="">forgot your password?</a>
                     <p className="center-text text-muted"><small>Don't have an account?</small></p>
                     <button className="btn btn-block btn-default">create an account</button>
