@@ -20,7 +20,7 @@ const TopNav = (props) => {
               <NavDropdown eventKey={3} title={props.authenticatedUser.username} id="basic-nav-dropdown">
                 <MenuItem eventKey={3.1} onClick={() => { props.history.push('/about') }}>Profile</MenuItem>
                 <MenuItem divider />
-                <MenuItem eventKey={3.4}>Logout</MenuItem>
+                <MenuItem eventKey={3.4} onClick={() => { props.history.push('/logout') }}>Logout</MenuItem>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>

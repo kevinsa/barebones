@@ -2,16 +2,26 @@ import React from 'react';
 import LoginForm from './components/LoginForm'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { login } from '../../modules/authentication';
+import { login, loginFromStorage } from '../../modules/authentication';
+import Storage from '../../services/storage';
+
 import './Login.css'
 
 class Login extends React.Component {
+    constructor(props) {
+        super(props);
+        this.storage = new Storage()
+    }
+
     handleLogin = (user) => {
         this.props.login(user)
     }
 
     componentDidMount() {
-        console.log('Login Mounted')
+        const authenticatedUser = this.storage.getAuthUser()
+        if(authenticatedUser) {
+            this.props.loginFromStorage()
+        }
     }
 
     render() {
@@ -38,7 +48,8 @@ class Login extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-    login
+    login,
+    loginFromStorage
 }, dispatch)
 
 const mapStateToProps = state => ({

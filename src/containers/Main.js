@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Home from './Home';
 import About from './About';
 import Login from './login/Login';
+import Logout from './Logout'
 
 const renderComponent = (props, component) => {
     if(props.isAuthenticated) {
@@ -24,6 +25,7 @@ const Main = (props) => (
         <Switch>
             <Route exact path='/' render={() => { return renderComponent(props, 'Home') }} />
             <Route exact path='/login' render={() => <Login /> } />
+            <Route exact path='/logout' component={Logout} />
             <Route exact path='/about' render={() => { return renderComponent(props, 'About') }} />
         </Switch>
     </div>
