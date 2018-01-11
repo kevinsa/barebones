@@ -83,7 +83,10 @@ class LoginForm extends React.Component {
                             </button>
                     <a href="">forgot your password?</a>
                     <p className="center-text text-muted"><small>Don't have an account?</small></p>
-                    <button className="btn btn-block btn-default">create an account</button>
+                    <button className="btn btn-block btn-default"
+                        onClick={() => { this.props.history.push('/register') }}>
+                            create an account
+                    </button>
                 </form>
             </div>
         )

@@ -1,5 +1,6 @@
 import React from 'react';
 import LoginForm from './components/LoginForm'
+import { withRouter } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { login, loginFromStorage } from '../../modules/authentication';
@@ -42,6 +43,7 @@ class Login extends React.Component {
                     </div>
                     <div className="col-md-6">
                         <LoginForm authenticating={this.props.isAuthenticating}
+                            history={this.props.history}
                             onSubmit={this.handleLogin} 
                             authenticationError={this.props.authenticationError} />
                     </div>
@@ -62,4 +64,4 @@ const mapStateToProps = state => ({
     authenticationError: state.authentication.authenticationError
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login))

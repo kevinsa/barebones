@@ -4,10 +4,19 @@ body {
   font-family: sans-serif;
 }
 
+a {
+  cursor: pointer;
+}
+
 .center-text {
   text-align: center;
 }
 
 .text-muted {
   color: #888888
+}
+
+.error {
+    color: red;
+    margin-bottom: 15px;
 }
