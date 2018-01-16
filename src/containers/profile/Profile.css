@@ -1,0 +1,11 @@
+.profile-page {
+  text-align: center;
+}
+
+.profile-page .header img {
+  border-radius: 50%;
+}
+
+.profile-page .details {
+  margin-top: 30px;
+}

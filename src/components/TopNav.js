@@ -13,12 +13,14 @@ const TopNav = (props) => {
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav>
+              {/*
               <NavItem eventKey={1} href="#">Link</NavItem>
               <NavItem eventKey={2} href="#">Link</NavItem>
+              */}
             </Nav>
             <Nav pullRight>
               <NavDropdown eventKey={3} title={props.authenticatedUser.username} id="basic-nav-dropdown">
-                <MenuItem eventKey={3.1} onClick={() => { props.history.push('/about') }}>Profile</MenuItem>
+                <MenuItem eventKey={3.1} onClick={() => { props.history.push('/profile') }}>Profile</MenuItem>
                 <MenuItem divider />
                 <MenuItem eventKey={3.4} onClick={() => { props.history.push('/logout') }}>Logout</MenuItem>
               </NavDropdown>

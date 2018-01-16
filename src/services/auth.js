@@ -10,6 +10,7 @@ export const LoginUser = (username, password) => {
                     id: 1,
                     name: 'Bare Bones',
                     username: username,
+                    email: 'bare@bones.com',
                     token: '4GToBisWO9plqtS6mAJWF8YLIEyVq3gO'
                 })
             }

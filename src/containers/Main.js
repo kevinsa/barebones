@@ -6,12 +6,15 @@ import About from './About';
 import Login from './login/Login';
 import Logout from './Logout';
 import Register from './registration/Register';
+import Profile from './profile/Profile';
 
 const renderComponent = (props, component) => {
     if(props.isAuthenticated) {
         switch(component) {
             case 'About':
                 return <About />
+            case 'Profile':
+                return <Profile />
             default:
                 return <Home />
         }
@@ -29,6 +32,7 @@ const Main = (props) => (
             <Route exact path='/logout' component={Logout} />
             <Route exact path='/register' component={Register} />
             <Route exact path='/about' render={() => { return renderComponent(props, 'About') }} />
+            <Route exact path='/profile' render={() => { return renderComponent(props, 'Profile') }} />
         </Switch>
     </div>
 );
