@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default (props) => (
-  <div class="user-profile">
+  <div className="user-profile">
       <div className="header">
         <img src="https://placeimg.com/100/100/animals" alt="" />
         <h4>{props.authenticatedUser.name}</h4>

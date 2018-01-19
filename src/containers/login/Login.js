@@ -18,13 +18,6 @@ class Login extends React.Component {
         this.props.login(user)
     }
 
-    componentDidMount() {
-        const authenticatedUser = this.storage.getAuthUser()
-        if(authenticatedUser) {
-            this.props.loginFromStorage()
-        }
-    }
-
     render() {
         return (
             <div className="login-page">

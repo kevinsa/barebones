@@ -98,9 +98,6 @@ export const loginFromStorage = () => {
                 type: LOGIN_HYDRATE,
                 payload: authenticatedUser
             })
-
-            //redirect
-            dispatch(push('/'))
         }
     }
 }

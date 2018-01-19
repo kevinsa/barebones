@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown, MenuItem } from 'react-bootstrap';
 
 const TopNav = (props) => {
   if(props.authenticated) {
