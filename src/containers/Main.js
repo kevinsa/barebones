@@ -1,6 +1,5 @@
 import React from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
 import requireAuth from '../components/auth/RequireAuth'
 import Home from './Home';
 import About from './About';
@@ -22,8 +21,4 @@ const Main = (props) => (
     </div>
 );
 
-const mapStateToProps = state => ({
-    isAuthenticated: state.authentication.authenticated
-})
-
-export default withRouter(connect(mapStateToProps)(Main))
+export default withRouter(Main)
